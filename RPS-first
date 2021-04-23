@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Logan Apr.02 trial</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<script>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+</script>
+
+<button type="button" onclick='myFunction()'>Click Me!</button>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+
+
+
+
+<P>
+above was all basic sample<br>
+<hr>
+
+GAME IS BELOW
+<P>
+
+<br>
+<button type="button" onclick='document.getElementById("youPick").innerHTML = "*ROCK*"'>Rock</button>
+<button type="button" onclick='document.getElementById("youPick").innerHTML = "-PAPER-"'>Paper</button>
+<button type="button" onclick='document.getElementById("youPick").innerHTML = "x SCISSORS x"'>Scissors</button>
+
+<BR>
+<P>
+You Choose:
+<b id="youPick">...waiting for your to pick...</b>
+
+
+<p>
+<button type="button" onclick='pickCPU()'>Allow Computer to pick</button>
+
+<P>
+<script>
+function pickCPU() {
+//put a RANDOM call here, to have logic making Competitor choice
+  document.getElementById("cpuPick").innerHTML = "Computer is Ready";
+  document.getElementById("cpuPick").innerHTML = "Computer is Ready..";
+  document.getElementById("cpuPick").innerHTML = "Computer is Ready.. ..";
+  document.getElementById("cpuPick").innerHTML = "Computer is Ready.. .. ..";
+  //case
+  //*ROCK*
+  // -PAPER-
+  // xSCISSORSx
+  // random 0,1,2
+  // if 0=ROCK
+  // if 1=PAPER
+  // if 2=SCISSORS
+  var randCPUpick =  Math.floor(Math.random() * 3)
+  document.getElementById("cpuPick").innerHTML = randCPUpick;
+  switch(randCPUpick) {
+  case 0:
+    // code block
+    document.getElementById("cpuPick").innerHTML = "*ROCK*";
+    break;
+  case 1:
+    // code block
+    document.getElementById("cpuPick").innerHTML = "-PAPER-";
+    break;
+  case 2:
+    // code block
+    document.getElementById("cpuPick").innerHTML = "xSCISSORSx";
+    break;
+  default:
+    // code block
+    document.getElementById("cpuPick").innerHTML = "ERROR, default choosen. Try again"
+   }
+  
+  
+}
+</script>
+
+
+<p>
+Competitor throws:  <b id="cpuPick">(will write this code later)</b>
+
+<p>
+<button type="button" onclick='document.getElementById("youPick").innerHTML = "x SCISSORS x"'>Decide the Winner</button>
+
+<p>
+Winner is:  <b id="judge">(TBA with string compare)</b>
+
+
+</body>
+</html>
